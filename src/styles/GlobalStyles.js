@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: 'proxima-nova', sans-serif;
     background-color: black;
   }

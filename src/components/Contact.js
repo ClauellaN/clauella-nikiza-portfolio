@@ -116,6 +116,12 @@ const ContactInfo = styled.div`
     background-color: #808080;
     padding: 20px;
     border-radius: 15px;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 const Title = styled.h2`
   font-size: 3rem;
@@ -132,6 +138,11 @@ const InfoSection = styled.div`
     color: white;
     padding: 10px;
     text-align: center;
+    min-width: 150px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 const ContactText = styled.span`
