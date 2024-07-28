@@ -1,7 +1,5 @@
 # Welcome to my Portfolio
 
-Portfolio
-
 ### Design
 
 1. **Color Scheme and Theme:**
@@ -32,13 +30,13 @@ Portfolio
    - Added hover effects to project cards to provide additional information and links to live demos and source code.
    - Implemented a burger menu for easy navigation on mobile devices.
 
-   ### Key Features
+### Key Features
 
-1. **Hero Section:**
-2. **About Me Section:**
-3. **Projects Section:**
-4. **Technologies Section:**
-5. **Contact Section:**
+- **Hero Section:**
+- **About Me Section:**
+- **Projects Section:**
+- **Technologies Section:**
+- **Contact Section:**
 
 ### Future Improvements
 
