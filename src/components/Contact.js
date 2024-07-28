@@ -37,7 +37,7 @@ const Contact = () => {
                   </SocialLink>
                     <ContactText>clauenikiz@gmail.com</ContactText>
                 </InfoSection>
-                <InfoSection>
+                {/* <InfoSection>
                     <SocialTitle>Socials</SocialTitle>
                     <SocialLinks>
                         <SocialLink href="https://linkedin.com/in/yourprofile" target="_blank">
@@ -50,7 +50,7 @@ const Contact = () => {
                             <FaInstagram size={30} />
                         </SocialLink>
                     </SocialLinks>
-                </InfoSection>
+                </InfoSection> */}
             </ContactInfo>
             <Form onSubmit={handleSubmit}>
                 <FormField>
