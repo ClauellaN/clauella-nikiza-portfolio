@@ -8,7 +8,7 @@ const HeroSection = () => {
     return(                
       <HeroWrapper>
         <Content>
-          <Greeting>Welcome to my portfolio! </Greeting>
+          <Greeting>Hello! </Greeting>
           <Title>I'm Clauella.</Title>
           <Title>A Full Stack Web Developer.</Title>
           <Subtitle>Nice to meet you!</Subtitle>
@@ -61,6 +61,7 @@ const Subtitle = styled.p`
 `;
 
 const SocialIcons = styled.div`
+margin-top: 50px;
   display: flex;
   gap: 30px;
 `;

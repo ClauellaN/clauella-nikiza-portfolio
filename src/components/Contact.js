@@ -37,20 +37,6 @@ const Contact = () => {
                   </SocialLink>
                     <ContactText>clauenikiz@gmail.com</ContactText>
                 </InfoSection>
-                {/* <InfoSection>
-                    <SocialTitle>Socials</SocialTitle>
-                    <SocialLinks>
-                        <SocialLink href="https://linkedin.com/in/yourprofile" target="_blank">
-                            <FaLinkedin size={30} />
-                        </SocialLink>
-                        <SocialLink href="https://github.com/yourprofile" target="_blank">
-                            <FaGithub size={30} />
-                        </SocialLink>
-                        <SocialLink href="https://instagram.com/yourprofile" target="_blank">
-                            <FaInstagram size={30} />
-                        </SocialLink>
-                    </SocialLinks>
-                </InfoSection> */}
             </ContactInfo>
             <Form onSubmit={handleSubmit}>
                 <FormField>
@@ -113,7 +99,7 @@ const ContactInfo = styled.div`
     width: 100%;
     max-width: 800px;
     margin-bottom: 50px;
-    background-color: #808080;
+    background-color: #333333;
     padding: 20px;
     border-radius: 15px;
     flex-wrap: wrap;
@@ -151,17 +137,6 @@ const ContactText = styled.span`
     color: white;
 `;
 
-const SocialTitle = styled.h3`
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: white;
-`;
-
-const SocialLinks = styled.div`
-    display: flex;
-    gap: 20px;
-`;
-
 const SocialLink = styled.a`
     color: white;
     transition: color 0.3s;
@@ -175,7 +150,7 @@ const Form = styled.form`
     flex-direction: column;
     width: 100%;
     max-width: 800px;
-    background-color: #808080;
+    background-color: #333333;
     padding: 20px;
     border-radius: 15px;
 `;
@@ -200,7 +175,6 @@ const Input = styled.input`
         outline: none;
     }
 `;
-
 const Textarea = styled.textarea`
     padding: 10px;
     border: 1px solid #ddd;
@@ -208,7 +182,6 @@ const Textarea = styled.textarea`
     font-size: 1.5rem;
     background-color: black;
     color: white;
-    resize: vertical;
     transition: border-color 0.3s;
     height: 150px;
 

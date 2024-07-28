@@ -1,7 +1,7 @@
 
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { FaGithub } from "react-icons/fa";  // Importing the GitHub icon from react-icons
+import { FaGithub } from "react-icons/fa";  
 
 const Projects = () => {
   const projectsInfo = [
@@ -15,7 +15,7 @@ const Projects = () => {
     },
     {
       title: "Sling Air",
-      imgSrc: "/assets/slingAir.jpg",
+      imgSrc: "/assets/slingAir1.jpg",
       repoLink: "https://github.com/ClauellaN/project-slingair.git",
       liveDemo: "https://sling-air.vercel.app", 
       description: "A user-friendly flight booking application. Easily book flights and manage your reservations.",
@@ -64,16 +64,6 @@ const Projects = () => {
 
 export default Projects;
 
-// Keyframes for animations
-const hoverEffect = keyframes`
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-`;
-
 // Styled components
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -84,17 +74,19 @@ const ProjectsWrapper = styled.div`
   min-height: 100vh;
   border: none;
   background-color: #1a1a1a;
-
 `;
+
 const Title = styled.h2`
   font-size: 2.5rem;
-  margin-top: 100px;
+  margin-bottom: 100px;
   color: white;
 `;
 
 const ProjectGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  // flex-direction: column;
+  justify-content: center;
   gap: 20px;
   width: 100%;
   max-width: 1200px;
@@ -104,8 +96,13 @@ const ProjectItem = styled.div`
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
-  height: 500px; 
+  height: 500px;
+  width: 500px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
 
   img {
     width: 100%;
@@ -122,22 +119,20 @@ const ProjectItem = styled.div`
     opacity: 1;
   }
 `;
-
 const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   height: 500px;
-  background:black;
+  background: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 20px;  /* Add padding to space out the content */
+  padding: 20px; 
 `;
-
 const ProjectTitle = styled.h3`
   margin: 15px 0;
   font-size: 1.8rem;

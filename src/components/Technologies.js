@@ -8,7 +8,7 @@ import { SiExpress, SiMongodb } from 'react-icons/si';
 const Technologies = () => {
   return (
     <TechWrapper>
-      <Title>Technologies</Title>
+      <Title>TECHNOLOGIES</Title>
           <SubTitle> Languages</SubTitle>
       <TechList>
         <TechCard>
@@ -57,7 +57,7 @@ export default Technologies;
 const TechWrapper = styled.div`
   padding: 50px 20px;
   text-align: center;
-  background-color: #1a1a1a;
+
       min-height: 100vh;
     border: none;
     background-color: #1a1a1a;
@@ -80,10 +80,11 @@ const SubTitle = styled.h3`
   margin-bottom: 5%;
   font-family: 'Roboto', sans-serif;
   color: white;
+  text-decoration: underline;
 `;
 
 const TechCard = styled.div`
-  background: #808080 ;
+  background: #333333 ;
   border-radius: 10px;
   padding: 20px;
   width: 300px;
