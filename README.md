@@ -1,6 +1,8 @@
-# Welcome to my Portfolio
+# Welcome to my Portfolio!
 
-### Design
+---
+
+## Design
 
 1. **Color Scheme and Theme:**
    - I chose a dark theme with contrasting colors to create a modern and professional look.
@@ -14,7 +16,9 @@
    - Used simple and readable fonts (Proxima-Nova) to maintain a professional appearance.
    - Font sizes and weights are adjusted for hierarchy and emphasis.
 
-### Implementation
+---   
+
+## Implementation
 
 1. **Technologies Used:**
    - **React:** For building the interactive UI.
@@ -30,7 +34,9 @@
    - Added hover effects to project cards to provide additional information and links to live demos and source code.
    - Implemented a burger menu for easy navigation on mobile devices.
 
-### Key Features
+---
+
+## Key Features
 
 - **Hero Section:**
 - **About Me Section:**
@@ -38,10 +44,14 @@
 - **Technologies Section:**
 - **Contact Section:**
 
-### Future Improvements
+---
+
+## Future Improvements
 
 1. **Animations:**
    - Add more subtle animations to enhance the user experience.
 
 2. **Additional Projects:**
    - Continuously update the portfolio with new projects and improvements to existing ones.
+
+---
