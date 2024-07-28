@@ -23,7 +23,7 @@ const Projects = () => {
     },
     {
       title: "Tic-Tac-Toe",
-      imgSrc: "/assets/TicTacToe.jpg",
+      imgSrc: "/assets/TicTacToe.JPG",
       repoLink: "https://github.com/ClauellaN/react-useState.git",
       liveDemo: "https://tic-tac-toe.vercel.app",
       description: "A classic Tic-Tac-Toe game built with React. Play against the computer or challenge a friend.",
