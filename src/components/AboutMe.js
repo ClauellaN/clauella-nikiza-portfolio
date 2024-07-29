@@ -96,7 +96,7 @@ const IconWrapper = styled.div`
 
 const ContentTitle = styled.h3`
   margin-bottom: 10px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
 
 `;
@@ -105,6 +105,6 @@ const Paragraph = styled.p`
   margin-top: 10px;
   font-weight: normal;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
 `;
 

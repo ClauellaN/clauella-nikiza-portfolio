@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { FaLinkedin, FaTwitter, FaGithub, FaInstagram, FaBehance } from 'react-icons/fa';
 
 const HeroSection = () => {
