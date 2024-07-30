@@ -2,7 +2,8 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import { FaLinkedin, FaEnvelope, FaGithub, FaPhone, FaInstagram } from 'react-icons/fa';
+import {FaEnvelope, FaPhone} from 'react-icons/fa';
+import emailjs from 'emailjs-com'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -11,19 +12,42 @@ const Contact = () => {
         message: ''
     });
 
+    const [submitted, setSubmitted] = useState(false);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+
+        // Hide success message when the user starts typing again
+        if (submitted) {
+            setSubmitted(false);
+        }
     };
 
+    //FUNCTION TO HANDLE FORM SUBMISSION USING EMAILJS
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form data submitted:", formData);
+        emailjs.sendForm('service_txfwapk' , 'template_1vym2tc' , e.target, 'w5x3poBS7GxrL9xT2' )
+        .then ((result) => {
+            console.log(result.text)
+            setSubmitted(true);
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+            });
+            (error) => {
+                console.log(error.text)
+            }
+        });
+        // Hiding the sent message after 5 seconds
+        setTimeout(() => {
+            setSubmitted(false);
+        }, 5000);
     };
-
     return (
         <ContactWrapper>
-            <Title>Contact Me</Title>
+            <Title>CONTACT ME</Title>
             <ContactInfo>
                 <InfoSection>
                 <SocialLink href="tel:+15147024250" target="_blank">
@@ -74,6 +98,7 @@ const Contact = () => {
                 <ButtonContainer>
                     <SubmitButton type="submit">SEND</SubmitButton>
                 </ButtonContainer>
+                {submitted && <SentMessage> Your message has been sent!</SentMessage>}
             </Form>
         </ContactWrapper>
     );
@@ -110,10 +135,14 @@ const ContactInfo = styled.div`
     }
 `;
 const Title = styled.h2`
-  font-size: 3rem;
-  margin-bottom: 50px;
+  font-size: 2rem;
+  margin-bottom: 100px;
   font-family: 'Roboto', sans-serif;
   color: white;
+
+@media (max-width: 768px) {
+font-size: 1.5rem;
+  }
 `;
 
 const InfoSection = styled.div`
@@ -203,12 +232,17 @@ const SubmitButton = styled.button`
     border-radius: 15px;
     cursor: pointer;
     font-size: 1.5rem;
-    transition: background-color 0.3s, transform 0.3s;
     width: 100%;
     max-width: 200px; 
 
     &:hover {
         background-color: #b20710;
-        transform: translateY(-2px);
     }
+`;
+
+const SentMessage = styled.p`
+    margin-top: 20px;
+    font-size: 2rem;
+    color: green;
+    text-align: center;
 `;
