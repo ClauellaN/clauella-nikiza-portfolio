@@ -37,7 +37,7 @@ const Projects = () => {
       <ProjectGrid>
         {projectsInfo.map((project) => (
           <ProjectItem key={project.title}>
-            <img src={project.imgSrc} alt={`${project.title} Screenshot`} />
+            <img src={project.imgSrc} />
             <Overlay>
               <ProjectTitle>{project.title}</ProjectTitle>
               <Description>{project.description}</Description>

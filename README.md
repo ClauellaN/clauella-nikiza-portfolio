@@ -25,6 +25,8 @@
    - **React:** For building the interactive UI.
    - **Styled-Components:** For styling the components in a modular and maintainable way.
    - **React Router:** For navigation between different sections of the portfolio.
+
+   - **Emailjs:** For form contact integration.
    - **Vercel:** For deploying the portfolio.
 
 2. **Responsive Design:**
@@ -35,6 +37,7 @@
 3. **Interactivity:**
    - Added hover effects to project cards to provide additional information and links to live demos and source code.
    - Implemented a burger menu for easy navigation on mobile devices.
+   - Integrated EmailJS to handle contact form submissions and send emails directly from the website.
 
 ---
 

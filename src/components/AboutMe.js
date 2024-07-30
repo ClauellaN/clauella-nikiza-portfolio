@@ -79,7 +79,7 @@ const Content = styled.div`
   flex-wrap: wrap;
   text-align: left;
   max-width: 1400px;
-  gap: 20px;
+  gap: 10px;
 `;
 
 const ContentDeets = styled.div`
@@ -141,7 +141,6 @@ const Paragraph = styled.p`
   font-weight: normal;
   color: white;
   font-size: 1.4rem;
-  text-align: justify;
   line-height: 1.5;
 
   @media (max-width: 768px) {
