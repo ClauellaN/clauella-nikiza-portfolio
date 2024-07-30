@@ -80,16 +80,24 @@ const Title = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 100px;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ProjectGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  // flex-direction: column;
   justify-content: center;
   gap: 20px;
   width: 100%;
   max-width: 1200px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ProjectItem = styled.div`
@@ -173,6 +181,11 @@ const Button = styled.a`
   &:hover {
     background: linear-gradient(to right, #005bb5, #0070f3);
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+  padding: 8px 16px;
+  font-size: 0.9rem;
   }
 `;
 

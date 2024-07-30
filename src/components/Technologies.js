@@ -64,10 +64,14 @@ const TechWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 80px;
   font-family: 'Roboto', sans-serif;
   color: white;
+
+   @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 const TechList = styled.div`
   display: flex;
@@ -76,28 +80,35 @@ const TechList = styled.div`
   gap: 20px;
 `;
 const SubTitle = styled.h3`
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 5%;
   font-family: 'Roboto', sans-serif;
   color: white;
   text-decoration: underline;
+
+   @media (max-width: 768px) {
+    font-size: 1rem;;
+  }
 `;
 
 const TechCard = styled.div`
-  background: #333333 ;
+  background: #333333;
   border-radius: 10px;
   padding: 20px;
   width: 300px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
-  
+
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
-`;
 
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+`;
 const IconWrapper = styled.div`
   font-size: 3rem;
   margin-bottom: 20px;
@@ -109,6 +120,10 @@ const CardTitle = styled.h3`
   color: white;
   margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;;
+  }
 `;
 
 
