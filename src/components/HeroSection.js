@@ -1,112 +1,112 @@
-
-import React from 'react';
-import styled from 'styled-components';
-import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
+import React from "react";
+import styled from "styled-components";
 
 const HeroSection = () => {
   return (
     <HeroWrapper>
       <Content>
-        <Greeting>Hello!</Greeting>
-        <Title>I'm Clauella.</Title>
-        <Title>A Full Stack Web Developer.</Title>
-        <Subtitle>Nice to meet you!</Subtitle>
-        <SocialIcons>
-          <SocialLink href="https://twitter.com" target="_blank"><FaTwitter size={30} /></SocialLink>
-          <SocialLink href="https://linkedin.com" target="_blank"><FaLinkedin size={30} /></SocialLink>
-          <SocialLink href="https://instagram.com" target="_blank"><FaInstagram size={30} /></SocialLink>
-          <SocialLink href="https://github.com" target="_blank"><FaGithub size={30} /></SocialLink>
-        </SocialIcons>
+        <Greeting>BUILDING SECURE AND SCALABLE WEB APPS</Greeting>
+        <Title>SOFTWARE DEVELOPER</Title>
+        <Subtitle>
+        I specialize in building high-performance web applications using React, Node.js, and MongoDB. With a focus on creating clean and efficient code, I deliver solutions that enhance user experiences and drive business success.
+        </Subtitle>
+
+        <ButtonGroup>
+          <PrimaryButton href="#projects">Explore Projects</PrimaryButton>
+          <SecondaryButton href="#about">About My Journey</SecondaryButton>
+        </ButtonGroup>
       </Content>
       <ImageWrapper>
         <HeroImage src="/assets/Homepic.JPG" alt="Clauella" />
       </ImageWrapper>
     </HeroWrapper>
   );
-}
+};
 
 export default HeroSection;
 
-// styled components
+// Styled Components
+
 const HeroWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   height: 100vh;
-  text-align: left;
+  padding: 0 10%;
+  background-color: #1a1a1a;
   color: white;
-  padding: 20px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  gap: 50px; 
 `;
 
 const Content = styled.div`
-  padding-right: 10%;
-
-  @media (max-width: 768px) {
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
+  max-width: 600px;
+  padding: 50px;
 `;
 
 const Greeting = styled.h1`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  color: #ff6347;
   margin-bottom: 20px;
-  color: #ff6347; 
 `;
 
 const Title = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+  color: white;
+  text-transform: uppercase;
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ddd;
 `;
 
-const SocialIcons = styled.div`
-  margin-top: 30px; 
+const ButtonGroup = styled.div`
   display: flex;
   gap: 20px;
-
-  @media (max-width: 768px) {
-    justify-content: center;
-  }
+  margin-bottom: 30px;
 `;
 
-const SocialLink = styled.a`
+const PrimaryButton = styled.a`
+  padding: 15px 30px;
+  background-color: #007bff;
   color: white;
-  transition: color 0.3s;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
 
   &:hover {
-    color: #007bff;
+    background-color: #0056b3;
   }
 `;
 
-const ImageWrapper = styled.div`
-  max-width: 1000px; 
-  width: 100%;
+const SecondaryButton = styled.a`
+  padding: 15px 30px;
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s;
 
-  @media (max-width: 768px) {
-    max-width: 80%;
+  &:hover {
+    background-color: #007bff;
+    color: white;
   }
+`;
+const ImageWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
 `;
 
 const HeroImage = styled.img`
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   border-radius: 10px;
 `;

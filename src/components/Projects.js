@@ -1,5 +1,4 @@
 
-
 import React from "react";
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
@@ -8,55 +7,62 @@ const Projects = () => {
   const projects = [
     {
       title: "FinPort",
-      imgSrc: "/assets/finport.JPG",
+      description:
+        "A financing portal to help merchants manage clients and payments seamlessly. Built with a MERN stack (MongoDB, Express.js, React, Node.js), it handles client account management, payment processing, and transaction logs.",
+      technologies: "React, Node.js, Express, MongoDB, JWT, Styled-Components",
+      challenges:
+        "Integrated secure payment processing and efficient state management.",
+      solutions:
+        "Overcame payment tokenization issues with Square API and implemented Redux for managing global state efficiently.",
+      repoLink: "https://github.com/ClauellaN/finport.git",
+      liveDemo: "https://finport.vercel.app/",
+    },
+    {
+      title: "Wearables",
+      description:
+        "An e-commerce store offering a seamless shopping experience with easy checkouts. Features product browsing, dynamic cart system, and secure payment integration.",
+      technologies: "React, Node.js, Express, MongoDB, Square API",
+      challenges:
+        "Creating a dynamic cart system and integrating Stripe payments.",
+      solutions:
+        "Built a real-time cart with React Context API and successfully integrated Stripe for secure payments.",
       repoLink: "https://github.com/ClauellaN/finalProject-FinPort.git",
       liveDemo: "https://finport.vercel.app/",
-      description:
-        "A financing portal to help merchants manage clients and payments seamlessly.",
     },
     {
-      title: "Wearables Store",
-      imgSrc: "/assets/eComm.JPG",
-      repoLink: "https://github.com/ClauellaN/finalProject-FinPort.git",
+      title: "SlingShot Airlines",
+      description:
+        "A user-friendly flight booking application. Users can easily search for available flights, book, and manage reservations.",
+      technologies: "React, CSS",
+      challenges: "Managing game logic and state efficiently.",
+      solutions:
+        "Utilized React's useState and useEffect hooks to manage game state and rerenders smoothly.",
+      repoLink: "https://github.com/ClauellaN/slingshot-airlines.git",
       liveDemo: "https://finport.vercel.app/",
-      description:
-        "An e-commerce store offering a seamless shopping experience with easy checkouts.",
-    },
-    {
-      title: "Nyan Cat",
-      imgSrc: "/assets/nyan-cat.jpg",
-      repoLink: "https://github.com/ClauellaN/project-js-nyan-cat.git",
-      liveDemo: "https://nyan-cat.vercel.app",
-      description:
-        "Experience a thrilling game with Nyan Cat the astronaut. Help him navigate through falling arrows to safely reach the moon.",
-    },
-    {
-      title: "Sling Air",
-      imgSrc: "/assets/slingAir1.jpg",
-      repoLink: "https://github.com/ClauellaN/project-slingair.git",
-      liveDemo: "https://sling-air.vercel.app",
-      description:
-        "A user-friendly flight booking application. Easily book flights and manage your reservations.",
-    },
-    {
-      title: "Tic-Tac-Toe",
-      imgSrc: "/assets/TicTacToe.JPG",
-      repoLink: "https://github.com/ClauellaN/react-useState.git",
-      liveDemo: "https://tic-tac-toe.vercel.app",
-      description: "A classic Tic-Tac-Toe game built with React.",
     },
   ];
 
   return (
     <Wrapper>
       <Title>Projects</Title>
-      <Grid>
+      <ProjectsGrid>
         {projects.map((project) => (
-          <Card key={project.title}>
-            <Image src={project.imgSrc} alt={project.title} />
-            <Overlay>
+          <ProjectContainer key={project.title}>
+            <Details>
               <ProjectTitle>{project.title}</ProjectTitle>
               <Description>{project.description}</Description>
+              <Section>
+                <SectionTitle>Technologies:</SectionTitle>
+                <SectionContent>{project.technologies}</SectionContent>
+              </Section>
+              <Section>
+                <SectionTitle>Challenges:</SectionTitle>
+                <SectionContent>{project.challenges}</SectionContent>
+              </Section>
+              <Section>
+                <SectionTitle>Solutions:</SectionTitle>
+                <SectionContent>{project.solutions}</SectionContent>
+              </Section>
               <ButtonGroup>
                 <Button href={project.liveDemo} target="_blank">
                   Live Demo
@@ -65,119 +71,96 @@ const Projects = () => {
                   <FaGithub size={24} />
                 </IconButton>
               </ButtonGroup>
-            </Overlay>
-          </Card>
+            </Details>
+          </ProjectContainer>
         ))}
-      </Grid>
+      </ProjectsGrid>
     </Wrapper>
   );
 };
 
 export default Projects;
 
+// Styled Components
 const Wrapper = styled.div`
-  padding: 60px;
+  padding: 40px;
   background-color: #1a1a1a;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #fff;
-  margin-bottom: 40px;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+  text-align: center;
+  margin-bottom: 30px;
 `;
 
-const Grid = styled.div`
+const ProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
 `;
 
-const Card = styled.div`
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    transform: translateY(-5px);
-  }
+const ProjectContainer = styled.div`
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-
-  ${Card}:hover & {
-    transform: scale(1.1);
-  }
-`;
-
-const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+const Details = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-
-  ${Card}:hover & {
-    opacity: 9;
-  }
+  color: #ddd;
 `;
 
 const ProjectTitle = styled.h2`
   font-size: 1.8rem;
   color: #fff;
   margin-bottom: 10px;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const Description = styled.p`
   font-size: 1rem;
   color: #ddd;
-  text-align: center;
   margin-bottom: 15px;
+`;
+
+const Section = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+`;
+
+const SectionTitle = styled.span`
+  font-weight: bold;
+  color: #00bcd4;
+  margin-right: 5px;
+`;
+
+const SectionContent = styled.span`
+  font-size: 1rem;
+  color: #ddd;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   gap: 15px;
+  margin-top: 15px;
 `;
 
 const Button = styled.a`
   background: linear-gradient(to right, #0070f3, #005bb5);
-  padding: 10px 20px;
+  padding: 8px 20px;
   color: white;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
 
   &:hover {
     background: linear-gradient(to right, #005bb5, #0070f3);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -195,6 +178,6 @@ const IconButton = styled.a`
 
   &:hover {
     background-color: #666;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
 `;

@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
+
+import React, { useState } from "react";
 import styled from "styled-components";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLinkedin, FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -17,13 +17,11 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Hide success message when the user starts typing again
     if (submitted) {
       setSubmitted(false);
     }
   };
 
-  //FUNCTION TO HANDLE FORM SUBMISSION USING EMAILJS
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
@@ -34,25 +32,25 @@ const Contact = () => {
         "w5x3poBS7GxrL9xT2"
       )
       .then((result) => {
-        console.log(result.text);
         setSubmitted(true);
         setFormData({
           name: "",
           email: "",
           message: "",
         });
-        (error) => {
-          console.log(error.text);
-        };
+      })
+      .catch((error) => {
+        console.log(error.text);
       });
-    // Hiding the sent message after 5 seconds
+
     setTimeout(() => {
       setSubmitted(false);
     }, 5000);
   };
+
   return (
     <ContactWrapper>
-      <Title>CONTACT ME</Title>
+      <Title>LET'S CONNECT</Title>
       <ContactInfo>
         <InfoSection>
           <SocialLink href="tel:+15147024250" target="_blank">
@@ -61,12 +59,20 @@ const Contact = () => {
           <ContactText>+1(514)702-4250</ContactText>
         </InfoSection>
         <InfoSection>
-          <SocialLink href="https://gmail.com/" target="_blank">
+          <SocialLink href="mailto:clauenikiz@gmail.com" target="_blank">
             <FaEnvelope size={20} />
           </SocialLink>
           <ContactText>clauenikiz@gmail.com</ContactText>
         </InfoSection>
       </ContactInfo>
+
+      <SocialIcons>
+        <SocialLink href="https://github.com" target="_blank"><FaGithub size={35} /></SocialLink>
+        <SocialLink href="https://linkedin.com" target="_blank"><FaLinkedin size={35} /></SocialLink>
+        <SocialLink href="https://twitter.com" target="_blank"><FaTwitter size={35} /></SocialLink>
+        <SocialLink href="https://instagram.com" target="_blank"><FaInstagram size={35} /></SocialLink>
+      </SocialIcons>
+
       <Form onSubmit={handleSubmit}>
         <FormField>
           <Input
@@ -111,7 +117,8 @@ const Contact = () => {
 
 export default Contact;
 
-// styled components
+// Styled Components
+
 const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -139,9 +146,10 @@ const ContactInfo = styled.div`
     align-items: center;
   }
 `;
+
 const Title = styled.h2`
   font-size: 2rem;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   font-family: "Roboto", sans-serif;
   color: white;
 
@@ -167,7 +175,8 @@ const InfoSection = styled.div`
 
 const ContactText = styled.span`
   margin-top: 30px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   color: white;
 `;
 
@@ -179,6 +188,17 @@ const SocialLink = styled.a`
     color: #007bff;
   }
 `;
+
+const SocialIcons = styled.div`
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -196,7 +216,7 @@ const FormField = styled.div`
 `;
 
 const Input = styled.input`
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 15px;
   font-size: 1.5rem;
@@ -206,11 +226,13 @@ const Input = styled.input`
 
   &:focus {
     border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
     outline: none;
   }
 `;
+
 const Textarea = styled.textarea`
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 15px;
   font-size: 1.5rem;
@@ -221,16 +243,18 @@ const Textarea = styled.textarea`
 
   &:focus {
     border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
     outline: none;
   }
 `;
+
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
 
 const SubmitButton = styled.button`
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: #e50914;
   color: #fff;
   border: none;
@@ -239,9 +263,11 @@ const SubmitButton = styled.button`
   font-size: 1.5rem;
   width: 100%;
   max-width: 200px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     background-color: #b20710;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 `;
 
